@@ -2,14 +2,37 @@ package main
 
 import "fmt"
 
+// Bad variable naming and lack of error handling
 func main() {
-    var num1, num2 int
-    fmt.Print("Enter first numberss: ")
-    fmt.Scan(&num1)
-    
-    fmt.Print("Enter second numberss: ")
-    fmt.Scan(&num2)
-    
-    sum := num1 + num2
-    fmt.Printf("The sum of %d and %d is %d\n", num1, num2, sum)
+	x := 5
+	y := 10
+	z := 0
+
+	// Bad looping structure
+	for i := 0; i < 1000; i++ {
+		if i%2 == 0 {
+			x += 2
+		} else {
+			y += 3
+		}
+	}
+
+	// Bad error handling
+	if z == 0 {
+		fmt.Println("Error: Division by zero!")
+	} else {
+		result := x / z // Division by zero possible
+		fmt.Println("Result:", result)
+	}
+
+	// No meaningful comments
+	var sum int
+	for i := 0; i < x; i++ {
+		// Inefficiently calculating sum
+		for j := 0; j < y; j++ {
+			sum += i * j
+		}
+	}
+
+	fmt.Println("Sum:", sum)
 }
